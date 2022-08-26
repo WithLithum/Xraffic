@@ -55,20 +55,16 @@ namespace Traffic_Policer
         public override void Initialize()
         {
             //Event handler for detecting if the player goes on duty
-
-            
-            Game.LogTrivial("Traffic Policer " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ", developed by Albo1125, has been initialised.");
+            Game.LogTrivial("Traffic Policer " + Assembly.GetExecutingAssembly().GetName().Version.ToString() + ", by Albo1125 updated by Aschtar for LSPDFR 0.4.9");
             Game.LogTrivial("Go on duty to start Traffic Policer - Traffic Policer.Initialise done.");
-            
-
         }
         //Dependencies
-        internal static Version Albo1125CommonVer = new Version("6.6.3.0");
-        internal static Version MadeForGTAVersion = new Version("1.0.1604.1");
+        internal static Version Albo1125CommonVer = new Version("6.6.4.0");
+        internal static Version MadeForGTAVersion = new Version("1.0.2699.0");
         internal static float MinimumRPHVersion = 0.51f;
         internal static string[] AudioFilesToCheckFor = new string[] { "lspdfr/audio/scanner/Traffic Policer Audio/OTHER_UNIT_TAKING_CALL/OTHER_UNIT_TAKING_CALL_01.wav", "lspdfr/audio/scanner/Traffic Policer Audio/Crimes/CRIME_DUI_01.wav" };
-        internal static Version RAGENativeUIVersion = new Version("1.6.3.0");
-        internal static Version MadeForLSPDFRVersion = new Version("0.4.2");
+        internal static Version RAGENativeUIVersion = new Version("1.9");
+        internal static Version MadeForLSPDFRVersion = new Version("0.4.9");
 
         internal static string FileID = "8303";
         internal static string DownloadURL = "https://www.lcpdfr.com/files/file/8303-traffic-policer-breathalyzer-traffic-offences-speed-detection-more/";
