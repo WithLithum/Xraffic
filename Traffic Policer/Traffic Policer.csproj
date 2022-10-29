@@ -63,29 +63,23 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Albo1125.Common, Version=6.6.2.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\Visual Studio 2022\References\Albo1125.Common.dll</HintPath>
+    <Reference Include="Albo1125.Common">
+      <HintPath>..\References\Albo1125.Common.dll</HintPath>
     </Reference>
-    <Reference Include="British Policing Script, Version=0.9.2.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\Visual Studio 2022\References\British Policing Script.dll</HintPath>
+    <Reference Include="British Policing Script">
+      <HintPath>..\References\British Policing Script.dll</HintPath>
     </Reference>
-    <Reference Include="LSPD First Response, Version=0.4.8037.37597, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\Visual Studio 2022\References\LSPD First Response.dll</HintPath>
+    <Reference Include="LSPD First Response">
+      <HintPath>..\References\LSPD First Response.dll</HintPath>
     </Reference>
-    <Reference Include="LSPDFR+, Version=1.9.1.1, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\Visual Studio 2022\References\LSPDFR+.dll</HintPath>
+    <Reference Include="LSPDFR+">
+      <HintPath>..\References\LSPDFR+.dll</HintPath>
     </Reference>
     <Reference Include="RAGENativeUI, Version=1.9.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\Visual Studio 2022\References\RAGENativeUI.dll</HintPath>
+      <HintPath>..\packages\RAGENativeUI.1.9.0\lib\net472\RAGENativeUI.dll</HintPath>
     </Reference>
-    <Reference Include="RagePluginHookSDK, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\Visual Studio 2022\References\RagePluginHookSDK.dll</HintPath>
+    <Reference Include="RagePluginHook, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\RagePluginHook.1.98.0\lib\net472\RagePluginHook.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -134,6 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
