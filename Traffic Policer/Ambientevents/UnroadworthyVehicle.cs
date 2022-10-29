@@ -37,7 +37,7 @@ namespace Traffic_Policer.Ambientevents
                     car.EngineHealth = 60f;
                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFunctions.AddQuestionToTrafficStop(driver, "What happened to your vehicle?", new List<string> { "It needs a trip to the garage, officer.", "It's getting a bit old.", "Someone slashed my tyres!", "What's wrong with it?" });
+                        API.LspdfrPlusWrapper.AddQuestionToTrafficStop(driver, "What happened to your vehicle?", new List<string> { "It needs a trip to the garage, officer.", "It's getting a bit old.", "Someone slashed my tyres!", "What's wrong with it?" });
                     }
                     while (eventRunning)
                     {

@@ -40,7 +40,7 @@ namespace Traffic_Policer.Ambientevents
                     driver.Tasks.CruiseWithVehicle(car, speed, VehicleDrivingFlags.FollowTraffic | VehicleDrivingFlags.YieldToCrossingPedestrians);
                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFunctions.AddQuestionToTrafficStop(driver, "Why were you on your phone?", new List<string> { "Sorry, officer. It was really important.", "I was just texting someone. Got a problem with that?", "What the hell do you care?", "It was my mother calling, officer!" });
+                        API.LspdfrPlusWrapper.AddQuestionToTrafficStop(driver, "Why were you on your phone?", new List<string> { "Sorry, officer. It was really important.", "I was just texting someone. Got a problem with that?", "What the hell do you care?", "It was my mother calling, officer!" });
                     }
                     DrivingStyleFiber = GameFiber.StartNew(delegate
                     {

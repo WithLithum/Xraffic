@@ -145,9 +145,8 @@ namespace Traffic_Policer.Callouts
                             DrugTestKit.SetPedDrugsLevels(driver, DrugsLevels.POSITIVE, DrugsLevels.NEGATIVE);
                             break;
                     }
-                    beforeTrafficStopDrive();
-                    //Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "Traffic Policer", "DUI", "Test the person for illegal substances. If);
-                    
+                    BeforeTrafficStopDrive();
+
                     while (CalloutRunning)
                     {
                         GameFiber.Yield();
@@ -164,19 +163,13 @@ namespace Traffic_Policer.Callouts
                             
                             break;
                         }
-                        if (Functions.GetActivePursuit() != null)
+
+                        if (Functions.GetActivePursuit() != null && Functions.GetPursuitPeds(Functions.GetActivePursuit()).Contains(driver))
                         {
-                            if (Functions.GetPursuitPeds(Functions.GetActivePursuit()).Contains(driver))
-                            {
-                                Pursuit = Functions.GetActivePursuit();
-                                PursuitCreated = true;
-                                break;
-                            }
-                            
-
+                            Pursuit = Functions.GetActivePursuit();
+                            PursuitCreated = true;
+                            break;
                         }
-                        
-
                     }
                     while (CalloutRunning)
                     {
@@ -185,24 +178,11 @@ namespace Traffic_Policer.Callouts
                         {
                             break;
                         }
-                        else if (Functions.IsPedArrested(driver)) { break; }
-                        else if (driver.IsDead) { break; }
-                        else if (PursuitCreated)
-                        {
-                            if (Functions.GetActivePursuit() == null)
-                            {
-                                break;
-                            }
-                        }
+                        else if (Functions.IsPedArrested(driver) || driver.IsDead || (PursuitCreated && Functions.GetActivePursuit() == null)) { break; }
                     }
                     DisplayCodeFourMessage();
-
-
-
-
-
                 }
-                catch (System.Threading.ThreadAbortException e)
+                catch (System.Threading.ThreadAbortException)
                 {
                     End();
                 }
@@ -213,11 +193,9 @@ namespace Traffic_Policer.Callouts
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
-                        Game.DisplayNotification("~O~DUI ~s~callout crashed, sorry. Please send me your log file.");
-                        Game.DisplayNotification("Full LSPDFR crash prevented ~g~successfully.");
+                        Game.DisplayNotification("~O~DUI ~s~callout has crashed! The callout will now end.");
                         End();
                     }
-
                 }
             });
 
@@ -230,9 +208,8 @@ namespace Traffic_Policer.Callouts
                 try
                 {
                     Impairment_Tests.Breathalyzer.SetPedAlcoholLevels(driver, Breathalyzer.GetRandomOverTheLimitAlcoholLevel());
-                    beforeTrafficStopDrive();
-                    //Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "Traffic Policer", "DUI", "Test the person for illegal substances. If);
-                    
+                    BeforeTrafficStopDrive();
+
                     while (CalloutRunning)
                     {
                         GameFiber.Yield();
@@ -240,7 +217,6 @@ namespace Traffic_Policer.Callouts
                         {
                             if (TrafficPolicerHandler.rnd.Next(5) == 0 && Functions.GetActivePursuit() == null)
                             {
-                                //Game.DisplayNotification("There's a " + (driver.IsMale ? "man" : "woman") + " on the deck.");
                                 Pursuit = Functions.CreatePursuit();
 
                                 Functions.AddPedToPursuit(Pursuit, driver);
@@ -249,19 +225,12 @@ namespace Traffic_Policer.Callouts
                             }
                             break;
                         }
-                        if (Functions.GetActivePursuit() != null)
+                        if (Functions.GetActivePursuit() != null && Functions.GetPursuitPeds(Functions.GetActivePursuit()).Contains(driver))
                         {
-                            if (Functions.GetPursuitPeds(Functions.GetActivePursuit()).Contains(driver))
-                            {
-                                Pursuit = Functions.GetActivePursuit();
-                                PursuitCreated = true;
-                                break;
-                            }
-
-
+                            Pursuit = Functions.GetActivePursuit();
+                            PursuitCreated = true;
+                            break;
                         }
-
-
                     }
                     while (CalloutRunning)
                     {
@@ -273,21 +242,13 @@ namespace Traffic_Policer.Callouts
                         }
                         else if (Functions.IsPedArrested(driver)) { break; }
                         else if (driver.IsDead) { break; }
-                        else if (PursuitCreated)
+                        else if (PursuitCreated && Functions.GetActivePursuit() == null)
                         {
-                            if (Functions.GetActivePursuit() == null)
-                            {
-                                Game.LogTrivial("Active pursuit end..");
-                                break;
-                            }
+                            Game.LogTrivial("Active pursuit end..");
+                            break;
                         }
                     }
                     DisplayCodeFourMessage();
-
-
-
-
-
                 }
                 catch (System.Threading.ThreadAbortException e)
                 {
@@ -300,19 +261,13 @@ namespace Traffic_Policer.Callouts
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
-                        Game.DisplayNotification("~O~DUI ~s~callout crashed, sorry. Please send me your log file.");
-                        Game.DisplayNotification("Full LSPDFR crash prevented ~g~successfully.");
+                        Game.DisplayNotification("~O~DUI ~s~callout has crashed! The callout will now end.");
                         End();
                     }
-
                 }
             });
 
         }
-
-
-
-
 
         private void DisplayCodeFourMessage()
         {
@@ -331,18 +286,13 @@ namespace Traffic_Policer.Callouts
                 {
                     msg = "The driver is dead.";
                 }
-                else if (PursuitCreated)
+                else if (PursuitCreated && Functions.GetActivePursuit() == null)
                 {
-                    if (Functions.GetActivePursuit() == null)
-                    {
-                        msg = "The driver has ~r~escaped.";
-                    }
+                    msg = "The driver has ~r~escaped.";
                 }
                 msg += " The DUI call is ~g~CODE 4~s~, over.";
                 GameFiber.Sleep(4000);
                 Game.DisplayNotification("3dtextures", "mpgroundlogo_cops", "Driver Under The Influence", "Dispatch to ~b~" + TrafficPolicerHandler.DivisionUnitBeat, msg);
-
-
 
                 Functions.PlayScannerAudio("ATTENTION_THIS_IS_DISPATCH_HIGH WE_ARE_CODE FOUR NO_FURTHER_UNITS_REQUIRED");
                 CalloutFinished = true;
@@ -350,37 +300,24 @@ namespace Traffic_Policer.Callouts
             }
         }
 
-        private void beforeTrafficStopDrive()
+        private void BeforeTrafficStopDrive()
         {
             driver.Tasks.CruiseWithVehicle(car, 18f, VehicleDrivingFlags.DriveAroundVehicles | VehicleDrivingFlags.DriveAroundObjects | VehicleDrivingFlags.YieldToCrossingPedestrians);
             MakeDriverSwerve();
             while (CalloutRunning)
             {
-
                 GameFiber.Yield();
                 
                 if (Functions.IsPlayerPerformingPullover() && Functions.GetPulloverSuspect(Functions.GetCurrentPullover()) == driver)
                 {
-
-
                     break;
-
                 }
 
-                
-                if (Vector3.Distance(Game.LocalPlayer.Character.Position, car.Position) < 13f)
+                if (Vector3.Distance(Game.LocalPlayer.Character.Position, car.Position) < 13f
+                    && !Game.LocalPlayer.Character.IsInAnyVehicle(false))
                 {
-                    if (!Game.LocalPlayer.Character.IsInAnyVehicle(false))
-                    {
-
-                        break;
-                    }
+                    break;
                 }
-
-
-
-
-
             }
             DriverStopped = true;
         }
@@ -417,8 +354,6 @@ namespace Traffic_Policer.Callouts
                     GameFiber.Wait(1500);
                     Functions.PlayScannerAudio("OFFICER HAS_BEEN_FATALLY_SHOT NOISE_SHORT OFFICER_NEEDS_IMMEDIATE_ASSISTANCE");
                     GameFiber.Wait(3000);
-
-
                 }
             }
             else
@@ -426,12 +361,9 @@ namespace Traffic_Policer.Callouts
                 GameFiber.Wait(1500);
                 Functions.PlayScannerAudio("OFFICER HAS_BEEN_FATALLY_SHOT NOISE_SHORT OFFICER_NEEDS_IMMEDIATE_ASSISTANCE");
                 GameFiber.Wait(3000);
-
-
             }
             base.End();
             if (driverBlip.Exists()) { driverBlip.Delete(); }
-            //SpeechHandler.HandlingSpeech = false;
             if (!CalloutFinished)
             {
                 if (driver.Exists()) { driver.Delete(); }
@@ -439,7 +371,6 @@ namespace Traffic_Policer.Callouts
             }
             else
             {
-
                 if (driver.Exists()) { driver.Dismiss(); }
                 if (car.Exists()) { car.Dismiss(); }
             }

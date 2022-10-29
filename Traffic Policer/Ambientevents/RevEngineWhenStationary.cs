@@ -30,7 +30,7 @@ namespace Traffic_Policer.Ambientevents
                     driver.Tasks.CruiseWithVehicle(car, speed, (VehicleDrivingFlags.FollowTraffic | VehicleDrivingFlags.YieldToCrossingPedestrians));
                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFunctions.AddQuestionToTrafficStop(driver, "What's all that revving about?", new List<string> { "Sorry, officer. Just having some fun.", "Traffic wasn't moving!", "What the hell do you care?", "Just testing my vehicle out, officer!" });
+                        API.LspdfrPlusWrapper.AddQuestionToTrafficStop(driver, "What's all that revving about?", new List<string> { "Sorry, officer. Just having some fun.", "Traffic wasn't moving!", "What the hell do you care?", "Just testing my vehicle out, officer!" });
                     }
                     DrivingStyleFiber = GameFiber.StartNew(delegate
                     {

@@ -9,7 +9,7 @@ using LSPD_First_Response.Engine.Scripting.Entities;
 
 namespace Traffic_Policer.API
 {
-    internal static class LSPDFRPlusFunctions
+    internal static class LspdfrPlusWrapper
     {
         public static void CreateCourtCase(Persona defendant, string crime, int GuiltyChance, string verdict)
         {

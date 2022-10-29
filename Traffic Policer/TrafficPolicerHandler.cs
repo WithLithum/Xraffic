@@ -373,7 +373,6 @@ namespace Traffic_Policer
         private static Vehicle[] nearbyVehicles { get; set; }
         public static Random rnd = new Random();
         private static int NumberOfAmbientEventsBeforeTimer = 1;
-        public static bool isOwnerWantedCalloutRunning = false;
         public static bool driverChangedDueToKeys = false;
         private static bool drugsRunnersEnabled { get; set; }
         private static int drugsRunnersFrequency { get; set; }
@@ -388,6 +387,8 @@ namespace Traffic_Policer
         public static bool isSomeoneFollowing { get; set; }
 
         public static Keys trafficStopMimicKey { get; set; }
+
+        internal static bool IsOwnerWantedCalloutRunning { get; set; }
 
         //public static AppDomain VehicleSearchDomain = Albo1125.Common.AppDomainHelper.GetAppDomainByName("VehicleSearch_AppDomain");
         public static bool AutoVehicleDoorLock = true;
@@ -454,7 +455,7 @@ namespace Traffic_Policer
                                 }
                                 else if (IsLSPDFRPlusRunning)
                                 {
-                                    API.LSPDFRPlusFunctions.CreateCourtCase(Functions.GetPersonaForPed(ped), "driving under the influence of alcohol", 100, API.LSPDFRPlusFunctions.DetermineFineSentence(390, 1000) +
+                                    API.LspdfrPlusWrapper.CreateCourtCase(Functions.GetPersonaForPed(ped), "driving under the influence of alcohol", 100, API.LspdfrPlusWrapper.DetermineFineSentence(390, 1000) +
                                         " License suspended for " + TrafficPolicerHandler.rnd.Next(1, 7) + " months.");
                                 }
 
@@ -473,7 +474,7 @@ namespace Traffic_Policer
                                 }
                                 else if (IsLSPDFRPlusRunning)
                                 {
-                                    API.LSPDFRPlusFunctions.CreateCourtCase(Functions.GetPersonaForPed(ped), "driving under the influence of drugs", 100, API.LSPDFRPlusFunctions.DetermineFineSentence(390, 1000) +
+                                    API.LspdfrPlusWrapper.CreateCourtCase(Functions.GetPersonaForPed(ped), "driving under the influence of drugs", 100, API.LspdfrPlusWrapper.DetermineFineSentence(390, 1000) +
                                         " License suspended for " + TrafficPolicerHandler.rnd.Next(1, 7) + " months.");
                                 }
 

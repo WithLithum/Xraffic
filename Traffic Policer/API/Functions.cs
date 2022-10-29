@@ -153,7 +153,28 @@ namespace Traffic_Policer.API
         /// Use this only if you don't want the vehicle details to appear after typing in a licence plate in a custom window. Remember to reactivate this after you're done fetching the input.
         /// </summary>
         /// <param name="enabled"></param>
+        [Obsolete("Use SetAutomaticVehicleDetailsCheckEnabled(bool).", true)]
         public static void SetAutomaticVehicleDeatilsChecksEnabled(bool enabled)
+        {
+            SetAutomaticVehicleDetailsCheckEnabled(enabled);
+        }
+
+        /// <summary>
+        /// Toggles whether to disable automatic vehicle details check after a vehicle number plate code has been entered
+        /// into a game input box.
+        /// </summary>
+        /// <remarks>
+        /// <para>
+        /// Traffic Policer detects any game input box and displays vehicle related information whenever a vehicle number plates in entered
+        /// into any game input box, to assist with searching with LSPDFR default computer.
+        /// </para>
+        /// <para>
+        /// This method can be used to disable that feature, in case of you do not want Traffic Policer to display vehicle status in case of a
+        /// number plate code entered into your text box.
+        /// </para>
+        /// </remarks>
+        /// <param name="enabled">If <see langword="true"/>, enable automatic details check; otherwise, <see langword="false"/>.</param>
+        public static void SetAutomaticVehicleDetailsCheckEnabled(bool enabled)
         {
             Game.LogTrivial("Traffic Policer API: Assembly " + Assembly.GetCallingAssembly().GetName().Name + " setting automatic vehicle details checks to: " + enabled.ToString());
             VehicleDetails.AutomaticDetailsChecksEnabled = enabled;
@@ -222,11 +243,5 @@ namespace Traffic_Policer.API
         {
             return Breathalyzer.IsPedOverTheLimit(ped);
         }
-
-        
-
-
-        
-
     }
 }

@@ -94,7 +94,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "a recent armed robbery";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(72, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(72, 180, 0);
                 }
                 scannerMessage = "CRIME_ARMED_ROBBERY";
                 upperSituationNumber = 31;
@@ -104,7 +104,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "assault with a deadly weapon";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(72, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(72, 180, 0);
                 }
                 scannerMessage = "CRIME_ASSAULT_DEADLY_WEAPON";
                 upperSituationNumber = 31;
@@ -115,7 +115,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "aggravated burglary";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(36, 96, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(36, 96, 0);
                 }
                 scannerMessage = "CRIME_BURGLARY";
                 upperSituationNumber = 32;
@@ -125,7 +125,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "attempted murder";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(150, 240, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(150, 240, 0);
                 }
                 scannerMessage = "CRIME_ATTEMPTED_HOMICIDE";
                 upperSituationNumber = 31;
@@ -135,7 +135,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "home invasion";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(24, 72, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(24, 72, 0);
                 }
                 scannerMessage = "CRIME_BREAKING_AND_ENTERING";
                 upperSituationNumber = 33;
@@ -145,7 +145,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "a kidnapping";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(60, 120, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(60, 120, 0);
                 }
                 scannerMessage = "CRIME_KIDNAPPING";
                 upperSituationNumber = 31;
@@ -155,7 +155,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "an armed carjacking";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(120, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(120, 180, 0);
                 }
                 scannerMessage = "CRIME_CARJACKING";
                 upperSituationNumber = 31;
@@ -165,7 +165,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "a recent shootout";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(120, 212, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(120, 212, 0);
                 }
                 scannerMessage = "CRIME_INCIDENT_INVOLVING_SHOTS_FIRED";
                 upperSituationNumber = 31;
@@ -175,7 +175,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "violent gang activity";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(84, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(84, 180, 0);
                 }
                 scannerMessage = "CRIME_HIGH_RANKING_GANG_MEMBER_TRANSIT";
                 upperSituationNumber = 31;
@@ -185,7 +185,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "links to ISIS";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(84, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(84, 180, 0);
                 }
                 scannerMessage = "CRIME_POSSIBLE_TERRORIST_ACTIVITY";
                 upperSituationNumber = 29;
@@ -195,7 +195,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "various serious felonies";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(84, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(84, 180, 0);
                 }
                 scannerMessage = "CRIME_WANTED_FELON_ON_THE_LOOSE";
                 upperSituationNumber = 32;
@@ -205,7 +205,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "a violent road rage incident";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(6, 24, 40);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(6, 24, 40);
                 }
                 scannerMessage = "CRIME_ATTACK_ON_VEHICLE";
                 upperSituationNumber = 33;
@@ -215,7 +215,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "organised shoplifting";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(6, 24, 30);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(6, 24, 30);
                 }
                 scannerMessage = "CRIME_GRANDTHEFT";
                 upperSituationNumber = 32;
@@ -225,7 +225,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "an armoured car robbery";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(120, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(120, 180, 0);
                 }
                 scannerMessage = "CRIME_ARMOURED_CAR_ROBBERY";
                 upperSituationNumber = 31;
@@ -235,7 +235,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "a recent shootout";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(120, 212, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(120, 212, 0);
                 }
                 scannerMessage = "CRIME_SHOOTOUT";
                 upperSituationNumber = 31;
@@ -245,7 +245,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "trespassing";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(2, 12, 60);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(2, 12, 60);
                 }
                 scannerMessage = "CRIME_TRESPASSING_GOVERNMENT";
                 upperSituationNumber = 31;
@@ -255,7 +255,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "a driveby attack";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(100, 180, 0);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(100, 180, 0);
                 }
                 scannerMessage = "CRIME_DRIVEBYATTACK";
                 upperSituationNumber = 31;
@@ -265,7 +265,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "a hit and run";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(3, 24, 20);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(3, 24, 20);
                 }
                 scannerMessage = "CRIME_HITRUN";
                 upperSituationNumber = 32;
@@ -275,7 +275,7 @@ namespace Traffic_Policer.Callouts
                 descriptionOwnerWanted = "organised shoplifting";
                 if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                 {
-                    CourtSentence = API.LSPDFRPlusFunctions.DeterminePrisonSentence(6, 24, 30);
+                    CourtSentence = API.LspdfrPlusWrapper.DeterminePrisonSentence(6, 24, 30);
                 }
                 scannerMessage = "CRIME_GRANDTHEFT";
                 upperSituationNumber = 32;
@@ -310,7 +310,7 @@ namespace Traffic_Policer.Callouts
 
         public override bool OnCalloutAccepted()
         {
-            TrafficPolicerHandler.isOwnerWantedCalloutRunning = true;
+            TrafficPolicerHandler.IsOwnerWantedCalloutRunning = true;
 
             car = new Vehicle(carModel, spawnPoint.Position, spawnPoint.Heading);
             car.RandomiseLicencePlate();
@@ -526,7 +526,7 @@ namespace Traffic_Policer.Callouts
         public override void End()
         {
             base.End();
-            TrafficPolicerHandler.isOwnerWantedCalloutRunning = false;
+            TrafficPolicerHandler.IsOwnerWantedCalloutRunning = false;
             try {
                 Game.LogTrivial("ANPR Hit callout has ended.");
 
@@ -546,7 +546,7 @@ namespace Traffic_Policer.Callouts
                         {
                             if (TrafficPolicerHandler.IsLSPDFRPlusRunning && !driver.IsDead && Functions.IsPedArrested(driver))
                             {
-                                API.LSPDFRPlusFunctions.CreateCourtCase(Functions.GetPersonaForPed(driver), descriptionOwnerWanted, 100, CourtSentence);
+                                API.LspdfrPlusWrapper.CreateCourtCase(Functions.GetPersonaForPed(driver), descriptionOwnerWanted, 100, CourtSentence);
                             }
                         }
                         GameFiber.Sleep(3500);
@@ -706,7 +706,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try {
                             GameFiber.Sleep(10);
@@ -780,7 +780,7 @@ namespace Traffic_Policer.Callouts
 
                     bool driverDead = false;
                     bool passengerDead = false;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (driver.Exists())
                         {
@@ -860,7 +860,7 @@ namespace Traffic_Policer.Callouts
                 catch (Exception e)
                 {
                     
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -910,7 +910,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -974,7 +974,7 @@ namespace Traffic_Policer.Callouts
 
                     bool driverDead = false;
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (driver.Exists())
                         {
@@ -1028,7 +1028,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1080,7 +1080,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -1171,7 +1171,7 @@ namespace Traffic_Policer.Callouts
 
                     bool driverDead = false;
                     bool passengerDead = false;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (driver.Exists())
                         {
@@ -1252,7 +1252,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1296,7 +1296,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -1366,7 +1366,7 @@ namespace Traffic_Policer.Callouts
 
                     bool driverDead = false;
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (driver.Exists())
                         {
@@ -1426,7 +1426,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1476,7 +1476,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -1554,7 +1554,7 @@ namespace Traffic_Policer.Callouts
 
 
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
 
                         GameFiber.Yield();
@@ -1593,7 +1593,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1639,7 +1639,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
 
                         GameFiber.Sleep(10);
@@ -1745,7 +1745,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1797,7 +1797,7 @@ namespace Traffic_Policer.Callouts
             GameFiber.StartNew(delegate {
                 try {
                     Game.LogTrivial("Reinforcements created");
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         reinforcementCarDriver.Tasks.DriveToPosition(callerPosition, 40f, VehicleDrivingFlags.Emergency);
                         if (Vector3.Distance(reinforcementCar.Position, callerPosition) < 15f)
@@ -1860,7 +1860,7 @@ namespace Traffic_Policer.Callouts
                     passenger1Dead = false;
                     passenger2Dead = false;
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (reinforcementCarDriver.Exists())
                         {
@@ -1994,7 +1994,7 @@ namespace Traffic_Policer.Callouts
                     }
                     int waitingCount = 0;
                     int closeCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -2092,7 +2092,7 @@ namespace Traffic_Policer.Callouts
                     bool driverDead = false;
                     bool passengerDead = false;
                     bool callingForReinforcements = false;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (driver.Exists())
                         {
@@ -2236,7 +2236,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -2281,7 +2281,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -2319,7 +2319,7 @@ namespace Traffic_Policer.Callouts
                         }
                     }
                     int closeCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (Vector3.Distance(Game.LocalPlayer.Character.Position, car.Position) < 3.5f)
                         {
@@ -2356,7 +2356,7 @@ namespace Traffic_Policer.Callouts
                         }
                         GameFiber.Sleep(10);
                     }
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LocalPlayer.Character.Tasks.ClearSecondary();
                         if (driver.IsInVehicle(car, false))
@@ -2390,7 +2390,7 @@ namespace Traffic_Policer.Callouts
                     }
                     bool driverDead = false;
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (driver.Exists())
                         {
@@ -2429,7 +2429,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -2486,7 +2486,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         waitCount++;
                         GameFiber.Sleep(10);
@@ -2515,7 +2515,7 @@ namespace Traffic_Policer.Callouts
                             break;
                         }
                     }
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         driver = driver.ClonePed(true);
 
@@ -2630,7 +2630,7 @@ namespace Traffic_Policer.Callouts
                         Game.SetRelationshipBetweenRelationshipGroups("CRIMINALS", Game.LocalPlayer.Character.RelationshipGroup, Relationship.Hate);
                     }
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try {
                             if (driver.Exists())
@@ -2967,7 +2967,7 @@ namespace Traffic_Policer.Callouts
                         {
                             Game.LogTrivial(e.ToString());
                             Game.LogTrivial("Exception has been handled, not crashing.");
-                            if (!TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                            if (!TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                             {
                                 break;
                             }
@@ -3003,7 +3003,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -3061,7 +3061,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -3099,7 +3099,7 @@ namespace Traffic_Policer.Callouts
                         }
                     }
                     int closeCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (Vector3.Distance(Game.LocalPlayer.Character.Position, car.Position) < 3.5f)
                         {
@@ -3207,7 +3207,7 @@ namespace Traffic_Policer.Callouts
                                     Rage.Native.NativeFunction.Natives.START_ENTITY_FIRE(firePed);
                                     GameFiber.Sleep(500);
                                     int fireCount = 0;
-                                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                                     {
                                         fireCount++;
 
@@ -3237,7 +3237,7 @@ namespace Traffic_Policer.Callouts
                             }
                         }
                     }
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (passenger.IsAlive)
                         {
@@ -3279,7 +3279,7 @@ namespace Traffic_Policer.Callouts
                     }
 
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (driver.Exists())
                         {
@@ -3325,7 +3325,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -3380,7 +3380,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -3421,7 +3421,7 @@ namespace Traffic_Policer.Callouts
                         }
                     }
                     Game.LogTrivial("Listening for occupants out of car.");
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         GameFiber.Yield();
                         if (!driver.IsInVehicle(car, false) || !passenger.IsInVehicle(car, false))
@@ -3500,7 +3500,7 @@ namespace Traffic_Policer.Callouts
 
                     bool driverDead = false;
                     bool passengerDead = false;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         GameFiber.Yield();
                         if (driver.Exists())
@@ -3589,7 +3589,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -3638,7 +3638,7 @@ namespace Traffic_Policer.Callouts
                         driverBlip.Delete();
                     }
                     int waitingCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -3720,7 +3720,7 @@ namespace Traffic_Policer.Callouts
 
                     bool playerHasBeenSurprised = false;
                     int waitCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
 
                         GameFiber.Sleep(10);
@@ -3822,7 +3822,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -3869,7 +3869,7 @@ namespace Traffic_Policer.Callouts
                     }
                     int waitingCount = 0;
                     int closeCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -3939,7 +3939,7 @@ namespace Traffic_Policer.Callouts
                             continue;
                         }
                     }
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         if (Functions.IsPlayerPerformingPullover()) { Functions.ForceEndCurrentPullover(); }
                         pursuit = Functions.CreatePursuit();
@@ -3949,7 +3949,7 @@ namespace Traffic_Policer.Callouts
                     }
                     bool driverDead = false;
 
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         GameFiber.Sleep(1000);
                         if (driver.Exists())
@@ -3988,7 +3988,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -4057,7 +4057,7 @@ namespace Traffic_Policer.Callouts
         
         private void beforeTrafficStopDrive()
         {
-            while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+            while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
             {
                 try
                 {

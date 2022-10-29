@@ -36,8 +36,5 @@ namespace Traffic_Policer.Extensions
             }
             return "UNDETECTABLE";
         }
-        
-
-        
     }
 }

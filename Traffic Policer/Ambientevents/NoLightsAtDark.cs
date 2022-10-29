@@ -32,7 +32,7 @@ namespace Traffic_Policer.Ambientevents
                     driver.Tasks.CruiseWithVehicle(car, speed, VehicleDrivingFlags.FollowTraffic | VehicleDrivingFlags.YieldToCrossingPedestrians);
                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFunctions.AddQuestionToTrafficStop(driver, "Why are your lights off?", new List<string> { "Sorry, officer. I forgot", "It's not that dark, is it?", "What the hell do you care?", "I thought I had them on!" });
+                        API.LspdfrPlusWrapper.AddQuestionToTrafficStop(driver, "Why are your lights off?", new List<string> { "Sorry, officer. I forgot", "It's not that dark, is it?", "What the hell do you care?", "I thought I had them on!" });
                     }
                     while (eventRunning)
                     {

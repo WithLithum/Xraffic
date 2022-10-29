@@ -69,7 +69,7 @@ namespace Traffic_Policer.Ambientevents
                     driver.RemoveHelmet(true);
                     if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                     {
-                        API.LSPDFRPlusFunctions.AddQuestionToTrafficStop(driver, "Where was your helmet?", new List<string> { "Sorry, officer. I forgot", "It's a bit uncomfortable to wear, officer.", "What the hell do you care?", "I was enjoying the lovely weather, officer." });
+                        API.LspdfrPlusWrapper.AddQuestionToTrafficStop(driver, "Where was your helmet?", new List<string> { "Sorry, officer. I forgot", "It's a bit uncomfortable to wear, officer.", "What the hell do you care?", "I was enjoying the lovely weather, officer." });
                     }
                     while (eventRunning)
                     {

@@ -109,7 +109,7 @@
     <Compile Include="Ambientevents\UnroadworthyVehicle.cs" />
     <Compile Include="API\BritishPolicingScriptFunctions.cs" />
     <Compile Include="API\Functions.cs" />
-    <Compile Include="API\LSPDFRPlusFunctions.cs" />
+    <Compile Include="API\LspdfrPlusWrapper.cs" />
     <Compile Include="Callouts\DrugsRunners.cs" />
     <Compile Include="Callouts\DriverUnderTheInfluence.cs" />
     <Compile Include="Callouts\OwnerWanted.cs" />

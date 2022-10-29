@@ -119,7 +119,7 @@ namespace Traffic_Policer.Callouts
 
         public override bool OnCalloutAccepted()
         {
-            TrafficPolicerHandler.isOwnerWantedCalloutRunning = true;
+            TrafficPolicerHandler.IsOwnerWantedCalloutRunning = true;
             car = new Vehicle(carModel, spawnPoint.Position, spawnPoint.Heading);
             car.RandomiseLicencePlate();
             driver = car.CreateRandomDriver();
@@ -238,10 +238,10 @@ namespace Traffic_Policer.Callouts
         /// </summary>
         private void searchForDrugs()
         {
-            if (!TrafficPolicerHandler.isOwnerWantedCalloutRunning) { return; }
+            if (!TrafficPolicerHandler.IsOwnerWantedCalloutRunning) { return; }
             uint noti = Game.DisplayNotification("Did you see any ~r~drug dealing evidence ~s~being disposed of? ~h~~b~Y/N");
             int waitCount = 0;
-            while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+            while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
             {
                 GameFiber.Yield();
                 waitCount++;
@@ -279,7 +279,7 @@ namespace Traffic_Policer.Callouts
                 }
             }
             Game.DisplayNotification("Collect the ~r~drug dealing evidence. ~s~When you're done, ~b~hold 0~s~ to present it to ~b~court.");
-            while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+            while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
             {
                 GameFiber.Yield();
                 if (Albo1125.Common.CommonLibrary.ExtensionMethods.IsKeyDownRightNowComputerCheck(TrafficPolicerHandler.courtKey))
@@ -312,7 +312,7 @@ namespace Traffic_Policer.Callouts
                             Game.DisplayNotification("When you're done, ~b~hold down " + TrafficPolicerHandler.courtKey + "~s~ to present evidence to ~b~court.");
                             if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                             {
-                                API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
+                                API.LspdfrPlusWrapper.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
                             }
                         }
                     }
@@ -328,7 +328,7 @@ namespace Traffic_Policer.Callouts
                             Game.DisplayNotification("When you're done, ~b~hold down " + TrafficPolicerHandler.courtKey + "~s~ to present evidence to ~b~court.");
                             if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                             {
-                                API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
+                                API.LspdfrPlusWrapper.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
                             }
                         }
                     }
@@ -343,7 +343,7 @@ namespace Traffic_Policer.Callouts
                             Game.DisplayNotification("When you're done, ~b~hold down " + TrafficPolicerHandler.courtKey + "~s~ to present evidence to ~b~court.");
                             if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                             {
-                                API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
+                                API.LspdfrPlusWrapper.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
                             }
                         }
                     }
@@ -358,7 +358,7 @@ namespace Traffic_Policer.Callouts
                             Game.DisplayNotification("When you're done, ~b~hold down " + TrafficPolicerHandler.courtKey + "~s~ to present evidence to ~b~court.");
                             if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                             {
-                                API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
+                                API.LspdfrPlusWrapper.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
                             }
                         }
                     }
@@ -373,7 +373,7 @@ namespace Traffic_Policer.Callouts
                             Game.DisplayNotification("When you're done, ~b~hold down " + TrafficPolicerHandler.courtKey + "~s~ to present evidence to ~b~court.");
                             if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                             {
-                                API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
+                                API.LspdfrPlusWrapper.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
                             }
                         }
                     }
@@ -388,7 +388,7 @@ namespace Traffic_Policer.Callouts
                             Game.DisplayNotification("When you're done, ~b~hold down " + TrafficPolicerHandler.courtKey + "~s~ to present evidence to ~b~court.");
                             if (TrafficPolicerHandler.IsLSPDFRPlusRunning)
                             {
-                                API.LSPDFRPlusFunctions.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
+                                API.LspdfrPlusWrapper.AddCountToStatistic(Main.PluginName, "Drugs Runners - Pieces of evidence found");
                             }
                         }
                     }
@@ -405,7 +405,7 @@ namespace Traffic_Policer.Callouts
         {
 
             //driver = ClonePed(driver);
-            if (!TrafficPolicerHandler.isOwnerWantedCalloutRunning) { return; }
+            if (!TrafficPolicerHandler.IsOwnerWantedCalloutRunning) { return; }
             driverName = Functions.GetPersonaForPed(driver).FullName;
 
             if (passenger.Exists())
@@ -465,11 +465,11 @@ namespace Traffic_Policer.Callouts
                         blip.Scale = 0.8f;
                         remindLocations.Add(blip);
                     }
-                    if (!TrafficPolicerHandler.isOwnerWantedCalloutRunning) { break; }
+                    if (!TrafficPolicerHandler.IsOwnerWantedCalloutRunning) { break; }
                 }
             });
             int timeSinceLastThrow = 0;
-            while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+            while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
             {
                 GameFiber.Sleep(500);
                 timeSinceLastThrow++;
@@ -865,7 +865,7 @@ namespace Traffic_Policer.Callouts
                     }
 
                     int waitCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         waitCount++;
                         GameFiber.Sleep(10);
@@ -897,7 +897,7 @@ namespace Traffic_Policer.Callouts
                     drugsPursuit();
                     searchForDrugs();
                     createDrugsEndMessage();
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         calloutFinished = true;
                     }
@@ -910,7 +910,7 @@ namespace Traffic_Policer.Callouts
 
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -970,7 +970,7 @@ namespace Traffic_Policer.Callouts
                     }
 
                     int waitCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         waitCount++;
                         GameFiber.Sleep(10);
@@ -1002,7 +1002,7 @@ namespace Traffic_Policer.Callouts
                     drugsPursuit();
                     searchForDrugs();
                     createDrugsEndMessage();
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         calloutFinished = true;
                     }
@@ -1014,7 +1014,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1087,7 +1087,7 @@ namespace Traffic_Policer.Callouts
                     }
                     int waitingCount = 0;
                     int closeCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -1160,7 +1160,7 @@ namespace Traffic_Policer.Callouts
                     drugsPursuit();
                     searchForDrugs();
                     createDrugsEndMessage();
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         calloutFinished = true;
                     }
@@ -1172,7 +1172,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1241,7 +1241,7 @@ namespace Traffic_Policer.Callouts
                     }
                     int waitingCount = 0;
                     int closeCount = 0;
-                    while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         try
                         {
@@ -1322,7 +1322,7 @@ namespace Traffic_Policer.Callouts
                 }
                 catch (Exception e)
                 {
-                    if (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+                    if (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
                     {
                         Game.LogTrivial(e.ToString());
                         Game.LogTrivial("Traffic Policer handled the exception successfully.");
@@ -1496,7 +1496,7 @@ namespace Traffic_Policer.Callouts
 
         private void createDrugsEndMessage()
         {
-            if (!TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+            if (!TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
             {
                 return;
             }
@@ -1684,7 +1684,7 @@ namespace Traffic_Policer.Callouts
         public override void End()
         {
             base.End();
-            TrafficPolicerHandler.isOwnerWantedCalloutRunning = false;
+            TrafficPolicerHandler.IsOwnerWantedCalloutRunning = false;
             try
             {
                 Game.LogTrivial("ANPR Hit (drugsrunners) callout has ended.");
@@ -1798,7 +1798,7 @@ namespace Traffic_Policer.Callouts
  
         private void beforeTrafficStopDrive()
         {
-            while (TrafficPolicerHandler.isOwnerWantedCalloutRunning)
+            while (TrafficPolicerHandler.IsOwnerWantedCalloutRunning)
             {
                 try
                 {
